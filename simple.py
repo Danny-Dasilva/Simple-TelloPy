@@ -10,7 +10,6 @@ clockwise
 counter_clockwise
 
 Created for Tech Garage
-Contributors: Dexter Dixon, Danny Dasilva
 """
 
 
