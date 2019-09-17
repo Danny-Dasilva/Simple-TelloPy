@@ -75,15 +75,6 @@ while True:
         print('Back pressed')
     
 
-#     forward
-# backward
-# left
-# right
-# up
-# down
-# clockwise
-# counter_clockwise
-
     elif  abs(leftsticky) > .05:
         if leftsticky > .05:
             drone.down(leftsticky * speed)

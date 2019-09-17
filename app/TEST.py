@@ -10,7 +10,12 @@ import cv2 as cv2
 import numpy
 import traceback
 
-
+def update(old, new, max_delta=0.1):
+    if abs(old - new) <= max_delta:
+        res = new
+    else:
+        res = 0.0
+    return res
 
 prev_flight_data = None
 run_recv_thread = True
@@ -92,41 +97,60 @@ class Drone():
         self.drone.subscribe(self.drone.EVENT_FLIGHT_DATA, handler)
         self.drone.subscribe(self.drone.EVENT_LOG_DATA, handler)
         self.current_image = None
+        self.speed = 50
+        self.throttle = 0.0
+        self.yaw = 0.0
+        self.pitch = 0.0
+        self.roll = 0.0
+        self.deadzone = .05
+   
+    def set_speed(self, input):
+        self.speed
     
     def counter_clockwise(self, speed):
         self.drone.counter_clockwise(speed)
-        time.sleep(.01)
-        self.drone.counter_clockwise(0)
     def clockwise(self, speed):
         self.drone.clockwise(speed)
-        time.sleep(.01)
-        self.drone.clockwise(0)
     def forward(self, speed):
         self.drone.forward(speed)
-        time.sleep(.01)
-        self.drone.forward(0)
     def backward(self, speed):
         self.drone.backward(speed)
-        time.sleep(.01)
-        self.drone.backward(0)
     def left(self, speed):
         self.drone.left(speed)
-        time.sleep(.01)
-        self.drone.left(0)
     def right(self, speed):
         self.drone.right(speed)
-        time.sleep(.01)
-        self.drone.right(0)
     def up(self, speed):
         self.drone.up(speed)
-        time.sleep(.01)
-        self.drone.up(0)
     def down(self, speed):
         self.drone.down(speed)
-        time.sleep(.01)
-        self.drone.down(0)
+    
+
+    def throttle1(self, speed):
+        self.drone.set_throttle(speed)
+        # print(speed, "speed")
+        # self.throttle = update(self.throttle, speed)
+        # print(self.throttle, "trhottle")
+        # self.drone.set_throttle(self.throttle)
+    
+ 
+    def yaw1(self, speed):
+        self.drone.set_yaw(speed)
+        # self.yaw = update(self.yaw, speed)
+        # self.drone.set_yaw(self.yaw)
+    
+    def pitch1(self, speed):
+        self.drone.set_pitch(speed)
+        # self.pitch = update(self.pitch, speed)
+        # self.drone.set_pitch(self.pitch)
+
+    def roll1(self, speed):
+        self.drone.set_roll(speed)
+        # self.roll = update(self.roll, speed)
+       # self.drone.set_roll(self.roll)
         
-    def takeoff(self):
+
+
+    def takeoff1(self):
         time.sleep(.5)
         self.drone.takeoff()
     def land(self):
