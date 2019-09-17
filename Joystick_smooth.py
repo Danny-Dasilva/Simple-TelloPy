@@ -47,18 +47,24 @@ while True:
         print('Back pressed')
     if abs(leftsticky) > .05:
        
-        drone.pitch1(-leftsticky)
-  
+        drone.pitch(-leftsticky)
+    else:
+        drone.pitch(0)
     if abs(rightsticky) > .05:
       
-        drone.throttle1(-rightsticky)
-
+        drone.throttle(-rightsticky)
+    else:
+        drone.throttle(0)
     if abs(leftstickx) > .05:
-       
-        drone.roll1(leftstickx)
+        print("call")
+        drone.roll(leftstickx)
+    else:
+        drone.roll(0)
     if abs(rightstickx) > .05:
     
-        drone.yaw1(rightstickx)
+        drone.yaw(rightstickx)
+    else:
+        drone.yaw(0)
         
     sleep(.02)
 

@@ -97,12 +97,12 @@ class Drone():
         self.drone.subscribe(self.drone.EVENT_FLIGHT_DATA, handler)
         self.drone.subscribe(self.drone.EVENT_LOG_DATA, handler)
         self.current_image = None
-        self.speed = 50
-        self.throttle = 0.0
-        self.yaw = 0.0
-        self.pitch = 0.0
-        self.roll = 0.0
-        self.deadzone = .05
+        # self.speed = 50
+        # self.throttle = 0.0
+        # self.yaw = 0.0
+        # self.pitch = 0.0
+        # self.roll = 0.0
+        # self.deadzone = .05
    
     def set_speed(self, input):
         self.speed
@@ -125,28 +125,14 @@ class Drone():
         self.drone.down(speed)
     
 
-    def throttle1(self, speed):
+    def throttle(self, speed):
         self.drone.set_throttle(speed)
-        # print(speed, "speed")
-        # self.throttle = update(self.throttle, speed)
-        # print(self.throttle, "trhottle")
-        # self.drone.set_throttle(self.throttle)
-    
- 
-    def yaw1(self, speed):
+    def yaw(self, speed):
         self.drone.set_yaw(speed)
-        # self.yaw = update(self.yaw, speed)
-        # self.drone.set_yaw(self.yaw)
-    
-    def pitch1(self, speed):
+    def pitch(self, speed):
         self.drone.set_pitch(speed)
-        # self.pitch = update(self.pitch, speed)
-        # self.drone.set_pitch(self.pitch)
-
-    def roll1(self, speed):
+    def roll(self, speed):
         self.drone.set_roll(speed)
-        # self.roll = update(self.roll, speed)
-       # self.drone.set_roll(self.roll)
         
 
 
