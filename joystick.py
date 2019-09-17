@@ -51,22 +51,26 @@ while True:
     
     if X == 1:
         print('X pressed')
-    if A == 1:
+        drone.left(speed)
+    elif A == 1:
         print('A pressed')
-    if B == 1:
+        drone.backward(speed)
+    elif B == 1:
         print('B pressed')
-    if Y == 1:
+        drone.right(speed)
+    elif Y == 1:
         print('Y pressed')
+        drone.forward(speed)
 
-    if LB == 1:
+    elif LB == 1:
         print('LB pressed')
-    if RB == 1:
+    elif RB == 1:
         print('RB pressed')
  
-    if Start == 1:
+    elif Start == 1:
         drone.takeoff()
         print('Start pressed')
-    if Back == 1:
+    elif Back == 1:
         drone.land()
         print('Back pressed')
     
@@ -86,27 +90,28 @@ while True:
         else:
             drone.up(-leftsticky * speed)
 
-    if  abs(rightsticky) > .05:
+    elif  abs(rightsticky) > .05:
         if rightsticky > .05:
             drone.backward(rightsticky * speed)
         else:
             drone.forward(-rightsticky * speed)
        
-    if  abs(leftstickx) > .05:
+    elif  abs(leftstickx) > .05:
         if leftstickx > .05:
             drone.clockwise(leftstickx * speed)
 
         else:
             drone.counter_clockwise(-leftstickx * speed)
         
-    if  abs(rightstickx) > .05:
+    elif  abs(rightstickx) > .05:
         if leftsticky > .05:
             drone.right(rightstickx * speed)
 
         else:
             drone.left(-rightstickx * speed)
+    
         
-    sleep(.05)
+    sleep(.02)
 
 
 
