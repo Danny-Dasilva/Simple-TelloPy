@@ -84,7 +84,7 @@ while True:
 # clockwise
 # counter_clockwise
 
-    if  abs(leftsticky) > .05:
+    elif  abs(leftsticky) > .05:
         if leftsticky > .05:
             drone.down(leftsticky * speed)
         else:
@@ -109,6 +109,7 @@ while True:
 
         else:
             drone.left(-rightstickx * speed)
+    
     
         
     sleep(.02)
