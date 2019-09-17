@@ -14,6 +14,8 @@ drone = Drone()
 
 pygame.init()
 
+drone.video()
+print("666666666666666666")
 joystick_count = pygame.joystick.get_count()
 speed = 50
 if joystick_count == 0:

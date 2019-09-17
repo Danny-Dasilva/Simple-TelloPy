@@ -159,19 +159,20 @@ class Drone():
         global run_recv_thread
         global new_image
         
-        threading.Thread(target=recv_thread, args=[self.drone]).start()
-
-        try:
-            while 1:
-                # loop with pygame.event.get() is too much tight w/o some sleep
-                time.sleep(0.02)    
-                if self.current_image is not new_image:
-                    cv2.imshow('Tello', new_image)
-                    self.current_image = new_image
-                    cv2.waitKey(1)
-        except KeyboardInterrupt as e:
-            print(e)
-        except Exception as e:
-            exc_type, exc_value, exc_traceback = sys.exc_info()
-            traceback.print_exception(exc_type, exc_value, exc_traceback)
-            print("error", e)
+        d = threading.Thread(target=recv_thread, args=[self.drone])
+        d.daemon = True
+        d.start()
+        def show_img():
+            try:
+                while 1:
+                    # loop with pygame.event.get() is too much tight w/o some sleep
+                    time.sleep(0.02)    
+                    if self.current_image is not new_image:
+                        cv2.imshow('Tello', new_image)
+                        self.current_image = new_image
+                        cv2.waitKey(1)
+            except KeyboardInterrupt as e:
+                print(e)
+        t = threading.Thread(target=show_img)
+        t.daemon = True
+        t.start()
