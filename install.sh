@@ -3,12 +3,12 @@
 sudo python3 -m pip uninstall tellopy
 python3 setup.py bdist_wheel
 sudo python3 -m pip install dist/tellopy-*.dev*.whl --upgrade
-sudo apt-get install python3-pip
+sudo apt-get install python3-pip -y
 sudo python3 -m pip install tellopy
 sudo python3 -m pip install pygame
-sudo apt-get install mplayer
-sudo apt-get install -y python-dev pkg-config
-sudo apt-get install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
+sudo apt-get install mplayer -y
+sudo apt-get install -y python-dev pkg-config -y
+sudo apt-get install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev -y
 sudo python3 -m pip install av
 sudo apt install python3-opencv
 
