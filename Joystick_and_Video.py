@@ -43,9 +43,13 @@ while True:
         # left  = gamepad.get_hat(3)
         # right = gamepad.get_hat(4)
 
-    print(x, "x")
-    print(y)
-        
+    # print(x, "x")
+    # print(y)
+  
+   
+    
+    
+    
     if Start == 1:
         print('Start pressed')
         drone.takeoff1()
@@ -61,6 +65,9 @@ while True:
     if abs(rightsticky) > .05:
       
         drone.throttle(-rightsticky)
+    elif y != 0:
+        drone.throttle(y)
+    
     else:
         drone.throttle(0)
     if abs(leftstickx) > .05:
@@ -71,9 +78,11 @@ while True:
     if abs(rightstickx) > .05:
     
         drone.yaw(rightstickx)
+    elif x != 0:
+        drone.yaw(x)
     else:
         drone.yaw(0)
-        
+    
     sleep(.02)
 
 
