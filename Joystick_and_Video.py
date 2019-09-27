@@ -39,17 +39,18 @@ while True:
         Start = gamepad.get_button(7)
         Back = gamepad.get_button(6)
         x, y = gamepad.get_hat(0)
-        # down = gamepad.get_axis(6)
-        # left  = gamepad.get_hat(3)
-        # right = gamepad.get_hat(4)
 
-    # print(x, "x")
-    # print(y)
+        X = gamepad.get_button(2)
+        Y = gamepad.get_button(3)
+        A = gamepad.get_button(0)
+        B = gamepad.get_button(1)
+    
+
   
    
     
-    
-    
+   
+
     if Start == 1:
         print('Start pressed')
         drone.takeoff1()
