@@ -15,7 +15,7 @@ drone = Drone()
 pygame.init()
 
 drone.video()
-print("666666666666666666")
+
 joystick_count = pygame.joystick.get_count()
 speed = 50
 if joystick_count == 0:
@@ -38,8 +38,14 @@ while True:
         leftstickx = gamepad.get_axis(3)
         Start = gamepad.get_button(7)
         Back = gamepad.get_button(6)
-       # drone.throttle(int(leftstick))
-    
+        x, y = gamepad.get_hat(0)
+        # down = gamepad.get_axis(6)
+        # left  = gamepad.get_hat(3)
+        # right = gamepad.get_hat(4)
+
+    print(x, "x")
+    print(y)
+        
     if Start == 1:
         print('Start pressed')
         drone.takeoff1()
