@@ -9,7 +9,9 @@ import pygame
 from time import sleep
 import os
 from app.TEST import Drone
-# This is set because normally pygame uses this video drive but the google coral does not support it
+
+
+
 drone = Drone()
 
 pygame.init()
