@@ -4,10 +4,8 @@
 # Author: Danny Dasilva
 # License: Public Domain 
 
-from __future__ import division
 import pygame
 from time import sleep
-import os
 from app.TEST import Drone
 
 
@@ -19,7 +17,7 @@ pygame.init()
 drone.video()
 
 joystick_count = pygame.joystick.get_count()
-speed = 50
+
 if joystick_count == 0:
     # No joysticks!
     print("Error, I didn't find any joysticks.")
