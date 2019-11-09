@@ -66,21 +66,17 @@ while True:
     if abs(rightsticky) > .05:
       
         drone.throttle(-rightsticky)
-    elif y != 0:
-        drone.throttle(y)
-    
     else:
         drone.throttle(0)
+        
     if abs(leftstickx) > .05:
         print("call")
         drone.roll(leftstickx)
     else:
         drone.roll(0)
+        
     if abs(rightstickx) > .05:
-    
         drone.yaw(rightstickx)
-    elif x != 0:
-        drone.yaw(x)
     else:
         drone.yaw(0)
     
