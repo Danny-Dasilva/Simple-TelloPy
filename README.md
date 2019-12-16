@@ -18,7 +18,6 @@ $ sh install.sh
 ## Simple example
 
 ```
-$ cd tellopy/examples
 $ python3 simple.py
 ```
 ## Documents
@@ -35,12 +34,6 @@ Help on package tellopy:
 
 You can find basic usage of this package in example code in the examples folder.
 
-### simple_takeoff
-This example let Tello take off. Tello will land automatically after a few seconds.
-
-```
-$ python -m tellopy.examples.simple_takeoff
-```
 
 ### video_effect
 Filter and display the realtime video stream from Tello.
@@ -65,15 +58,4 @@ $ python -m tellopy.examples.joystick_and_video
 ```
 ![photo](files/joystick_and_video.png)
 
-## Tellopy side projects
 
-### Hand_motion Tello controller
-
-You can find a hand_motion controller for the Tello in this project: https://github.com/GalBrandwine/HalloPy,
-and controll your tello using hand movements!
-
-###  OpenCV based Tello controller
-
-This interfaces with the drone through openCV and generates frames from the video stream for computer vision applications. It comes with a tracker that will detect a color in the scene and follow it:
-https://github.com/Ubotica/telloCV/
- 
